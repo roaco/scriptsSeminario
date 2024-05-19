@@ -11,4 +11,4 @@ mkdir -p "$BACKUP_DIR" || echo "Directorio de backups ya existe: $BACKUP_DIR"
 DB=test_database
 echo $DB
 mysqldump -u root -p$MYSQL_PASSWORD $DB | gzip -9 > "$BACKUP_DIR/testdb-$DATE.sql.gz"
-find $BACKUP_DIR/* -mtime +5 -exec rm {} \;
+find $BACKUP_DIR/* -mtime +10 -exec rm {} \;
